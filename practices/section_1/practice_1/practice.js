@@ -3,15 +3,16 @@ function collect_same_elements(collection_a, collection_b) {
     	var i = 0;
     	var j = 0;
         (function digui(){
-	    for(i=0;i<collection_a.length;i++){
-	    	if(collection_a[i]==collection_b[j]){
-	    		arr.push(collection_a[i]);
-	    		j++;
-	    		digui();
+	    for(i=0;i<collection_b.length;i++){
+	    	if(collection_b[i]==collection_a[j]){
+	    		arr.push(collection_b[i]);
 	    	}
-	    }
-	    if(j>=collection_b.length){
+	    }	
+	    j++;
+	    if(j>=collection_a.length){
 	    return arr;
+	    }else{
+	    	digui();
 	    }
     	})();
     	return arr;
